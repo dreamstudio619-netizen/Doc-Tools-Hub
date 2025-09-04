@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc Tools Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1E1E2F 0%, #2D2D44 100%);
+            color: #EAEAEA;
+            text-align: center;
+            min-height: 100vh;
+            padding-bottom: 30px;
+        }
+
+        .header {
+            background: #2B2D42;
+            padding: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #FFD700;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        .subheader {
+            color: #B0B0B0;
+            margin-bottom: 30px;
+            font-size: 18px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .tool-card {
+            background: #3A3D5B;
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            background: #FFD700;
+            color: #1E1E2F;
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.25);
+        }
+
+        .tool-card h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            min-height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tool-card p {
+            flex-grow: 1;
+            margin-bottom: 20px;
+            color: #D0D0D0;
+        }
+
+        .tool-card:hover p {
+            color: #2D2D44;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: auto;
+            padding: 12px 25px;
+            background: #FFD700;
+            color: #1E1E2F;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .tool-card:hover .btn {
+            background: #1E1E2F;
+            color: #FFD700;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .footer {
+            margin-top: 40px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .header {
+                font-size: 24px;
+                padding: 20px;
+            }
+            
+            .tool-card {
+                padding: 20px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 22px;
+            }
+            
+            .tool-card h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Doc Tools Hub</div>
+    
+    <p class="subheader">Your all-in-one solution for document conversion and manipulation</p>
+    
+    <div class="container">
+        <div class="tool-card">
+            <h2>PDF to Excel</h2>
+            <p>Convert PDF tables to Excel spreadsheets with precision.</p>
+            <button class="btn" onclick="goToSection('pdf-to-excel')">Convert Now</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>Excel to PDF</h2>
+            <p>Convert Excel spreadsheets to PDF format for easy sharing.</p>
+            <button class="btn" onclick="goToSection('excel-to-pdf')">Convert Now</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>PowerPoint to PDF</h2>
+            <p>Convert PowerPoint presentations to PDF documents.</p>
+            <button class="btn" onclick="goToSection('powerpoint-to-pdf')">Convert Now</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>PDF to PowerPoint</h2>
+            <p>Convert PDF files to editable PowerPoint presentations.</p>
+            <button class="btn" onclick="goToSection('pdf-to-powerpoint')">Convert Now</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>Word to PDF</h2>
+            <p>Convert Word documents to PDF format with perfect formatting.</p>
+            <button class="btn" onclick="goToSection('word-to-pdf')">Convert Now</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>PDF to Word</h2>
+            <p>Convert PDF files to editable Word documents.</p>
+            <button class="btn" onclick="goToSection('pdf-to-word')">Convert Now</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>Split PDF</h2>
+            <p>Split PDF files into multiple documents by pages.</p>
+            <button class="btn" onclick="goToSection('split-pdf')">Split Now</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>Merge PDF</h2>
+            <p>Merge multiple PDF files into one document seamlessly.</p>
+            <button class="btn" onclick="goToSection('merge-pdf')">Merge Now</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>Compress PDF</h2>
+            <p>Reduce PDF file size without losing quality.</p>
+            <button class="btn" onclick="goToSection('compress-pdf')">Compress Now</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>Image Compressor</h2>
+            <p>Compress images without noticeable quality loss.</p>
+            <button class="btn" onclick="goToSection('image-compressor')">Compress Now</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>Image Converter</h2>
+            <p>Convert images between different formats easily.</p>
+            <button class="btn" onclick="goToSection('image-converter')">Convert Now</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Doc Tools Hub &copy; 2023 | All your document conversion needs in one place</p>
+    </div>
+
+    <script>
+        function goToSection(sectionId) {
+            alert('Redirecting to ' + sectionId.replace(/-/g, ' ') + ' tool...');
+            // Replace with actual navigation logic when the pages are ready
+        }
+    </script>
+</body>
+</html>
